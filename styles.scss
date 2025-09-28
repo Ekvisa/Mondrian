@@ -1,0 +1,127 @@
+$red: #d80000;
+$blue: #042d73;
+$yellow: #f69302;
+$lightgray: #a2acb5;
+
+.container {
+  display: grid;
+  grid-template-columns: 2fr 3fr 3fr 6fr 3fr 3fr 1fr;
+  grid-template-rows: 2fr 6fr 6fr 3fr 3fr 1fr 1fr;
+  width: min(80vw, 80vh);
+  aspect-ratio: 1/1;
+  background-color: black;
+  gap: 10px;
+  text-align: right;
+  margin: 100px auto;
+  div {
+    min-width: 0;
+    min-height: 0;
+    word-break: break-word;
+    @media (max-width: 600px) {
+      overflow: hidden;
+    }
+  }
+}
+
+@mixin areaparams($columnstart, $columnend, $rowstart, $rowend, $color) {
+  grid-column-start: $columnstart;
+  grid-column-end: $columnend;
+  grid-row-start: $rowstart;
+  grid-row-end: $rowend;
+  background-color: $color;
+  color: $color;
+}
+
+.item1 {
+  @include areaparams(1, 3, 1, 2, $lightgray);
+}
+
+.item2 {
+  @include areaparams(3, 5, 1, 2, white);
+}
+
+.item3 {
+  @include areaparams(5, 7, 1, 2, $yellow);
+}
+
+.item4 {
+  @include areaparams(7, 8, 1, 5, $lightgray);
+}
+
+.item5 {
+  @include areaparams(1, 2, 2, 3, white);
+}
+
+.item6 {
+  @include areaparams(2, 5, 2, 4, $red);
+}
+
+.item7 {
+  @include areaparams(5, 7, 2, 3, $yellow);
+}
+
+.item8 {
+  @include areaparams(5, 6, 3, 4, white);
+}
+
+.item9 {
+  @include areaparams(6, 7, 3, 4, white);
+}
+
+.item10 {
+  @include areaparams(1, 2, 3, 5, $lightgray);
+}
+
+.item11 {
+  @include areaparams(2, 4, 4, 6, black);
+}
+
+.item12 {
+  @include areaparams(4, 5, 4, 5, $lightgray);
+}
+
+.item13 {
+  @include areaparams(5, 7, 4, 5, white);
+}
+
+.item14 {
+  @include areaparams(4, 5, 5, 6, $lightgray);
+}
+
+.item15 {
+  @include areaparams(5, 7, 5, 7, $blue);
+}
+
+.item16 {
+  @include areaparams(7, 8, 5, 8, $red);
+}
+
+.item17 {
+  @include areaparams(1, 2, 5, 8, $yellow);
+}
+
+.item18 {
+  @include areaparams(2, 4, 6, 8, white);
+}
+
+.item19 {
+  @include areaparams(4, 5, 6, 7, black);
+}
+
+.item20 {
+  @include areaparams(4, 7, 7, 8, white);
+  position: relative;
+  p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    transform: scaleX(2);
+    transform-origin: left;
+    color: black;
+    @media (max-width: 600px) {
+      font-size: 0.5em;
+    }
+  }
+}
